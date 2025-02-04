@@ -1,35 +1,12 @@
-const customer = {
-  username: "Mango",
-  balance: 24000,
-  discount: 0.1,
-  orders: ["Burger", "Pizza", "Salad"],
+const categoriesList = document.querySelector(`#categories`);
+const categoriesItem = document.querySelectorAll(`.item`);
 
-  getBalance() {
-    return this.balance;
-  },
+console.log(`Number of categories: ${categoriesItem.length}`);
 
-  getDiscount() {
-    return this.discount;
-  },
+categoriesItem.forEach(category => {
+    const title = category.querySelector(`h2`).textContent;
+    const elementCount = category.querySelectorAll(`li`).length;
 
-  setDiscount(value) {
-    this.discount = value;
-  },
-
-  getOrders() {
-    return this.orders;
-  },
-
-  addOrder(cost, order) {
-    this.balance -= cost - (cost * this.discount);
-    this.orders.push(order);
-  },
-
-  // Change code above this line
-};
-
-customer.setDiscount(0.15);
-console.log(customer.getDiscount()); // 0.15
-customer.addOrder(5000, "Steak");
-console.log(customer.getBalance()); // 19750
-console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
+    console.log(`Category: ${title}`);
+    console.log(`Elements: ${elementCount}`);
+});
