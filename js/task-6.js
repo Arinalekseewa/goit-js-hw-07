@@ -18,7 +18,8 @@ function createBoxes(amount) {
     return;
   }
 
-  mainBox.innerHTML = ""; 
+  const fragment = document.createDocumentFragment();
+  mainBox.innerHTML = "";
 
   for (let i = 0; i < amount; i++) {
     const newBox = document.createElement("div");
@@ -26,9 +27,10 @@ function createBoxes(amount) {
     newBox.style.width = `${size}px`;
     newBox.style.height = `${size}px`;
     newBox.style.backgroundColor = getRandomHexColor();
-    mainBox.appendChild(newBox);
+    fragment.appendChild(newBox);
   }
 
+  mainBox.appendChild(fragment);
   inputNumber.value = "";
 }
 

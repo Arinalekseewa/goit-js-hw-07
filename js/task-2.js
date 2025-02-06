@@ -31,6 +31,7 @@ const markup = images
   .map((image) => `<li><img src="${image.url}" alt="${image.alt}"></li>`)
   .join("");
 
-console.log(markup);
+gallery.innerHTML = markup;
+
 
 
